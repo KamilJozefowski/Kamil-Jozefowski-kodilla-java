@@ -1,7 +1,11 @@
 package com.kodilla.testing;
 
 import com.kodilla.testing.calculator.Calculator;
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import com.kodilla.testing.user.SimpleUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestingMain {
     public static void main(String[] args){
@@ -28,5 +32,17 @@ public class TestingMain {
         } else {
             System.out.println("Error!");
         }
+
+
+        //6.3 Zadanie: test klasy wybierającej parzyste liczby z kolekcji
+        List<Integer> listOfNumber = new ArrayList<>();
+
+        for (int a = 0; a < 100 ; a++){
+            listOfNumber.add(a);
+        }
+
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        oddNumbersExterminator.exterminate(listOfNumber);
+
     }
 }
