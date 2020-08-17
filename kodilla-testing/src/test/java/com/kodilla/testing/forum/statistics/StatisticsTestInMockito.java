@@ -62,11 +62,11 @@ public class StatisticsTestInMockito {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersNames0 = new ArrayList<>();
         when(statisticsMock.usersNames()).thenReturn(usersNames0);
-        when(statisticsMock.postsCount()).thenReturn(0);
+        //when(statisticsMock.postsCount()).thenReturn(0);
         when(statisticsMock.commentsCount()).thenReturn(0);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -85,7 +85,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(10);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -100,11 +100,11 @@ public class StatisticsTestInMockito {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersNames0 = new ArrayList<>();
         when(statisticsMock.usersNames()).thenReturn(usersNames0);
-        when(statisticsMock.postsCount()).thenReturn(1000);
+        //when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(0);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -123,7 +123,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(10);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -142,7 +142,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(1200);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -161,7 +161,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(0);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -180,7 +180,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(0);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -199,7 +199,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(10);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -218,7 +218,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(10);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then
@@ -237,7 +237,7 @@ public class StatisticsTestInMockito {
         when(statisticsMock.commentsCount()).thenReturn(1200);
 
         // When
-        Statistics statistics = new Statistics(statisticsMock);
+        Statistics statistics = new Statistics();
         statistics.calculateAdvStatistics(statisticsMock);
 
         // Then

@@ -8,8 +8,7 @@ public class Statistics implements StatisticsInterface {
     private Double avgCommentPerUser;
     private Double avgCommentPerPost;
 
-    public Statistics (Statistics statistics) {
-        this.statistics = statistics;
+    public Statistics () {
     }
 
     public void calculateAdvStatistics(Statistics statistics){
