@@ -51,4 +51,5 @@ public class LibraryUser {
     public int hashCode() {
         return Objects.hash(firstname, lastname, peselId);
     }
+
 }

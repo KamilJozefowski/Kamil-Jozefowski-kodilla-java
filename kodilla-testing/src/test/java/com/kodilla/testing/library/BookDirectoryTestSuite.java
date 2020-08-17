@@ -141,4 +141,5 @@ class BookDirectoryTestSuite {
         // Then
         assertEquals(5, theListOfBooks5.size());
     }
+
 }
