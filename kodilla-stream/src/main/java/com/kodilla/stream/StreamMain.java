@@ -75,12 +75,14 @@ public class StreamMain {
         Map<Integer, ForumUser> theResultMapOfUser = theListUser.getList().stream()
                 .filter(forumUser -> forumUser.getSexUser() == 'm')
                 .filter(forumUser -> forumUser.getOnPosts() >= 1)
-                .filter(forumUser -> forumUser.getBornUser().getDayOfYear() < 2000)
+                .filter(forumUser -> (forumUser.today.getYear() - forumUser.getBornUser().getYear()) < 20)
                 .collect(Collectors.toMap(ForumUser::getIdUser, forumUser -> forumUser));
 
         theResultMapOfUser.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
+
+
     }
 }
 

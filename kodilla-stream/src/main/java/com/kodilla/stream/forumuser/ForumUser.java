@@ -8,6 +8,7 @@ public class ForumUser {
     private final char sexUser;
     private final LocalDate bornUser;
     private final int onPosts;
+    public LocalDate today = LocalDate.now();
 
     public ForumUser(int idUser, String nameUser, char sexUser, LocalDate bornUser, int onPosts) {
         IdUser = idUser;
