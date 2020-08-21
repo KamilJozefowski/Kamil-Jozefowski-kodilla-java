@@ -12,7 +12,6 @@ class WorldTestSuite {
     @Test
     void testGetPeopleQuantity(){
         //Given
-        Set<Continent> world = new HashSet<>();
 
         Country poland = new Country(new BigDecimal("36852741"));
         Country czech = new Country(new BigDecimal("10698741"));
@@ -37,15 +36,14 @@ class WorldTestSuite {
         asia.addCountry(china);
         asia.addCountry(indie);
 
-        world.add(europa);
-        world.add(america);
-        world.add(asia);
+        World world = new World();
+
+        world.addContinent(europa);
+        world.addContinent(america);
+        world.addContinent(asia);
 
         //When
-        BigDecimal totalPeople = world.stream()
-                .flatMap(continent -> continent.getCountry().stream())
-                .map(Country::getPeopleQuantity)
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+        BigDecimal totalPeople = world.getPeopleQuantity(world.getCountry());
 
         //Then
         BigDecimal expectedPeople = new BigDecimal("3354002140");
