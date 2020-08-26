@@ -5,7 +5,7 @@ public class Main {
         FindFilght findFilght = new FindFilght();
 
         try {
-            if (findFilght.findFilght(new Flight("Warszawa", "Londyn"))) {
+            if (findFilght.FindFilght(new Flight("Warszawa", "Londyn"))) {
                 System.out.println("We have connections to these airports");
             }
         } catch (RouteNotFoundException e) {
@@ -13,7 +13,7 @@ public class Main {
         }
 
         try {
-            if (findFilght.findFilght(new Flight("Madryt", "Londyn"))) {
+            if (findFilght.FindFilght(new Flight("Madryt", "Londyn"))) {
                 System.out.println("We have connections to these airports");
             }
         } catch (RouteNotFoundException e) {
@@ -21,7 +21,7 @@ public class Main {
         }
 
         try {
-            if (findFilght.findFilght(new Flight("Warszawa", "Moskwa"))) {
+            if (findFilght.FindFilght(new Flight("Warszawa", "Moskwa"))) {
                 System.out.println("We have connections to these airports");
             }
         } catch (RouteNotFoundException e) {

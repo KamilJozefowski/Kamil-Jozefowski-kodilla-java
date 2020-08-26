@@ -11,10 +11,13 @@ public class SecendChallengeTestSuite {
     void testProbablyIWillThrowException(){
         // given
         SecondChallenge secondChallenge = new SecondChallenge();
+        ExceptionHandling firstTest = new ExceptionHandling(1,1);
+        ExceptionHandling secendTest = new ExceptionHandling(1,1.5);
+        ExceptionHandling thirdTest = new ExceptionHandling(3,1.5);
 
         // when & then
-        assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1 ,1));
-
-
+        assertDoesNotThrow(() -> firstTest);
+        assertDoesNotThrow (()-> secendTest);
+        assertDoesNotThrow (()-> thirdTest);
     }
 }
