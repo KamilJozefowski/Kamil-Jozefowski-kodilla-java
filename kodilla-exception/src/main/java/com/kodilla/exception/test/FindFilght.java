@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FindFilght {
 
-    public boolean FindFilght(Flight flight) throws RouteNotFoundException {
+    public boolean findFilght(Flight flight) throws RouteNotFoundException {
         Map <String, Boolean> airports = new HashMap<>();
 
         airports.put("Warszawa", true);
