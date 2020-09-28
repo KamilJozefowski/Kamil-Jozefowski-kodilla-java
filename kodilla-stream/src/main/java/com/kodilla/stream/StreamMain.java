@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
-        /*Processor processor = new Processor();
+        Processor processor = new Processor();
         processor.execute(() -> System.out.println("This is an example text."));
 
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
@@ -63,13 +63,13 @@ public class StreamMain {
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
 
-        BookDirectory theBookDirectory = new BookDirectory();
-        String theResultStringOfBooks = theBookDirectory.getList().stream()
+        BookDirectory theBookDirectory1 = new BookDirectory();
+        String theResultStringOfBooks = theBookDirectory1.getList().stream()
                 .filter(book -> book.getYearOfPublication() > 2005)
                 .map(Book::toString)
                 .collect(Collectors.joining(",\n","<<",">>"));
 
-        System.out.println(theResultStringOfBooks);*/
+        System.out.println(theResultStringOfBooks);
 
         Forum theListUser = new Forum();
         Map<Integer, ForumUser> theResultMapOfUser = theListUser.getList().stream()
