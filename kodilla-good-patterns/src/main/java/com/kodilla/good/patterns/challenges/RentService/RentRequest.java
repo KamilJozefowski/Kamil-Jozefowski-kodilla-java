@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 
 public class RentRequest {
 
-    private User user;
-    private LocalDateTime buyTime;
-    private Integer idSellingItem;
+    private final User user;
+    private final LocalDateTime buyTime;
+    private final Integer idSellingItem;
 
     public RentRequest(User user, LocalDateTime buyTime, Integer idSellingItem) {
         this.user = user;
@@ -24,9 +24,5 @@ public class RentRequest {
 
     public Integer getIdSellingItem() {
         return idSellingItem;
-    }
-
-    public void createRental(User user, LocalDateTime buyTime){
-
     }
 }

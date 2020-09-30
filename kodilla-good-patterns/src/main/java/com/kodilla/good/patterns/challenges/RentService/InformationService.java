@@ -5,7 +5,7 @@ public class InformationService {
     private boolean sentMail;
     private boolean sentSMS;
 
-    public InformationService(final User user) {
+    public InformationService(User user) {
         this.user = user;
     }
 

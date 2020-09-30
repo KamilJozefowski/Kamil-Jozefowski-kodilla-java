@@ -14,7 +14,7 @@ public class ProductOrderService {
 
         RentRequest rentRequest = new RentRequest(user, buyTime, 1697);
 
-        SellingProcess sellingProcess = new SellingProcess(new InformationService(user), new SellingService(), new RentalRepository());
+        SellingProcess sellingProcess = new SellingProcess(new InformationService(user), new SellingService(), new SellRepository());
 
         sellingProcess.process(rentRequest);
 
