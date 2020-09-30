@@ -1,5 +1,4 @@
 package com.kodilla.good.patterns.food2Door;
-import com.kodilla.good.patterns.challenges.RentService.User;
 
 public class InformationService {
     private final Customer customer;

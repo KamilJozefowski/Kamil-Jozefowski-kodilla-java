@@ -1,8 +1,6 @@
 package com.kodilla.good.patterns.food2Door;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class Main {
 

@@ -3,7 +3,6 @@ package com.kodilla.good.patterns.food2Door;
 import java.time.LocalDateTime;
 
 public class Order {
-
     private final Supplier supplier;
     private final Customer customer;
     private final LocalDateTime orderTime;

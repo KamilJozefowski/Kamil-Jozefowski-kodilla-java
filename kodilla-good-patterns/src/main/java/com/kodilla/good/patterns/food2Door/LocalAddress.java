@@ -15,4 +15,5 @@ public class LocalAddress {
     public String toString() {
         return "Address:" + city + ", " + street + " " + noBuilding;
     }
+
 }

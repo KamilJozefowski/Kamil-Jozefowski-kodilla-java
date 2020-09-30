@@ -26,3 +26,4 @@ public class Supplier {
         activeCompany = false;
     }
 }
+
