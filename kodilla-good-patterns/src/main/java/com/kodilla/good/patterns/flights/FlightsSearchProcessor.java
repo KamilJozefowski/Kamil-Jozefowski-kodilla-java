@@ -25,9 +25,9 @@ public class FlightsSearchProcessor {
         return flightsFromDestination.stream().filter((n) -> n.getArrivalAirport().equals(arrivalAirport)).collect(Collectors.toList());
     }
 
-    public HashMap connectionFlightSearch(ArrayList<Flight> currentFlightList, String departureAirport, String arrivalAirport) {
+    public HashMap<Flight, Flight> connectionFlightSearch(ArrayList<Flight> currentFlightList, String departureAirport, String arrivalAirport) {
         List<Flight> flightsFromDestination = this.departureAirportSearch(currentFlightList, departureAirport);
-        HashMap connectedFlights = new HashMap();
+        HashMap<Flight, Flight> connectedFlights = new HashMap<>();
 
         for (Flight value : flightsFromDestination) {
             List<Flight> connectionOption = this.getDeparturesAfterLocalTime(currentFlightList, value.getArrivalAirport(), value.getArrivalTime());
