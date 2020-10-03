@@ -12,21 +12,24 @@ public class Main {
         //ExtraFoodShop company
         LocalAddress localAddress = new LocalAddress("London", "Clone st", 18);
         ProductsSold productsSold = new ProductsSold("corn", 400);
-        Supplier supplier = new Supplier("ExtraFoodShop", localAddress, productsSold);
+        Supplier supplier = new Supplier("ExtraFoodShop",localAddress,productsSold) ;
+        ExtraFoodShop extraFoodShop = new ExtraFoodShop(supplier);
 
         //HealthyShop company
         LocalAddress localAddress1 = new LocalAddress("London", "the Mall", 6);
         ProductsSold productsSold1 = new ProductsSold("bio apple", 1200);
         Supplier supplier1 = new Supplier("HealthyShop", localAddress1, productsSold1);
+        HealthyShop healthyShop = new HealthyShop(supplier1);
 
         //GlutenFreeShop company
         LocalAddress localAddress2 = new LocalAddress("London", "Ogle st", 112);
         ProductsSold productsSold2 = new ProductsSold("cheese", 57);
         Supplier supplier2 = new Supplier("GlutenFreeShop", localAddress2, productsSold2);
+        GlutenFreeShop glutenFreeShop = new GlutenFreeShop(supplier2);
 
-        Order order = new Order(supplier, customer,time);
-        Order order1 = new Order(supplier1, customer,time);
-        Order order2 = new Order(supplier2, customer,time);
+        Order order = new Order(extraFoodShop, customer,time);
+        Order order1 = new Order(healthyShop, customer,time);
+        Order order2 = new Order(glutenFreeShop, customer,time);
 
 
         SellingProcess sellingProcess = new SellingProcess(order,new InformationService(customer),new SellingService());

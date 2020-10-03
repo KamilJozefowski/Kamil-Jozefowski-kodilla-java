@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.food2Door;
 
 public class Supplier {
-    private final String companyName;
-    private final LocalAddress address;
+    private String companyName;
+    private LocalAddress address;
     private ProductsSold productsSold;
 
     private boolean activeCompany = false;
@@ -12,6 +12,11 @@ public class Supplier {
         this.address = address;
         this.productsSold = productsSold;
     }
+
+    public Supplier() {
+
+    }
+
 
     @Override
     public String toString() {
