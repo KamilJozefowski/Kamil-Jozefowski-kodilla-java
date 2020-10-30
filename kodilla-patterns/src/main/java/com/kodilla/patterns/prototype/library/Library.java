@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public final class Library extends Prototype<Library> {
-    private String name;
-    Set<Book> books = new HashSet<>();
+    private final String name;
+    private Set<Book> books = new HashSet<>();
 
     public Library(final String name) {
         this.name = name;
@@ -22,7 +22,7 @@ public final class Library extends Prototype<Library> {
     }
 
     public void setName(String name) {
-        this.name = name;
+
     }
 
     public void setBooks(Set<Book> bookList) {
