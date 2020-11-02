@@ -1,0 +1,75 @@
+CREATE TABLE ISSUESLISTS 
+(
+   ID SERIAL PRIMARY KEY,
+   NAME VARCHAR(100) CHARSET utf8 NOT NULL 
+);
+
+CREATE TABLE ISSUES 
+( 
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    USER_ID_ASSIGNEDTO  BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(250) CHAR SET utf8mb4,
+    DESCRIPTION VARCHAR(2000) CHAR SET utf8mb4,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS (ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS (ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("ToDo");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("In progress");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("Done");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (1, 1, "Taks 1", "Litwo! Ojczyzno moja! Ty jesteś jak zdrowie");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (1, 1, "Taks 2", "Ile cię trzeba cenić, ten tylko głos miły:");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (1, 3, "Taks 3", "Witaj nam, że nam też szlachecka.");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (1, 5, "Taks 4", "Grzeczność nie dostrzegł, nazbyt rychło znikła ale mur chędogi");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (2, 1, "Taks 5", "Sterczały wkoło pali. Nawet strony swe trzymał pod lasem zwaliska.");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (2, 4, "Taks 6", " Po cóż kłócić się biedak zając.");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (2, 4, "Taks 7", "Puszczano wtenczas wszyscy siedli i zalety Ściągnęły wzrok na reducie, balu i swoją ważność zarazem poznaje");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (2, 3, "Taks 8", "jak kochał pana Tadeusza cnoty i Rzeczpospolita!");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (2, 5, "Taks 9", "Zawżdy z łąk, i dalszych replik stronom dzisiaj do ubrania");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (2, 2, "Taks 10", "na pagórku niewielkim, we dnie świeciło całe zaczerwienione");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (3, 2, "Taks 11", "jak kochał pana Tadeusza wsparła się możemy na miejscu sobie zostawionem.");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (3, 5, "Taks 12", " Trudno było. bo tak i jak dziecko przestraszone we dworze jak korona na czterech ławach cztery źrenic gorzały przeciw czarów.");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (3, 4, "Taks 13", "Raz w pole, za stołem.");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (3, 3, "Taks 14", "Z wieku może zyska bo tak mędrsi fircykom oprzeć się imion spisem woźnemu jest obora. ");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (3, 2, "Taks 15", "Dozoru tego dnia powiadał. ");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
+VALUES (3, 1, "Taks 16", "Dobrze, mój Tadeuszu bo tak krzycząc pan nigdy sługom nie szukać Bonaparta");
+
+COMMIT;
