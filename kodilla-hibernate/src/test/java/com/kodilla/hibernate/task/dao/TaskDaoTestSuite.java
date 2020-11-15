@@ -16,9 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class TaskDaoTestSuite {
 
+    private static final String LISTNAME = "To Do";
     @Autowired
     private TaskDao taskDao;
     private static final String DESCRIPTION = "Test: Learn Hibernate";
+    @Autowired
     private TaskListDao taskListDao;
 
     @Test
@@ -83,7 +85,7 @@ class TaskDaoTestSuite {
         TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10), false);
         task.setTaskFinancialDetails(tfd);
         task2.setTaskFinancialDetails(tfd2);
-        TaskList taskList = new TaskList("List name", "ToDo tasks");
+        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
         taskList.getTasks().add(task);
         taskList.getTasks().add(task2);
         task.setTaskList(taskList);
@@ -97,7 +99,7 @@ class TaskDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        //taskListDao.deleteById(id);
+        taskListDao.deleteById(id);
     }
 
 }
