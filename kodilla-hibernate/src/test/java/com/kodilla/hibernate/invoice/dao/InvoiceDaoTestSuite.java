@@ -6,13 +6,10 @@ import com.kodilla.hibernate.invoice.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-@Transactional
 @SpringBootTest
 public class InvoiceDaoTestSuite {
 
@@ -68,13 +65,13 @@ public class InvoiceDaoTestSuite {
 
         //CleanUp
         try {
-            productDao.deleteById(product1Id);
-            productDao.deleteById(product2Id);
-            productDao.deleteById(product3Id);
-            itemDao.deleteById(item1Id);
-            itemDao.deleteById(item2Id);
-            itemDao.deleteById(item3Id);
-            invoiceDao.deleteById(invoiceId);
+//            productDao.deleteById(product1Id);
+//            productDao.deleteById(product2Id);
+//            productDao.deleteById(product3Id);
+//            itemDao.deleteById(item1Id);
+//            itemDao.deleteById(item2Id);
+//            itemDao.deleteById(item3Id);
+//            invoiceDao.deleteById(invoiceId);
         } catch (Exception e) {
             //do nothing
         }
