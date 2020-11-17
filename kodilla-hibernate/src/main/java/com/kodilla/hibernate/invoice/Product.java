@@ -1,51 +1,61 @@
 package com.kodilla.hibernate.invoice;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(
+        name = "PRODUCTS"
+)
 public class Product {
     private int id;
     private String name;
-    private List<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList();
+
+    public Product() {
+    }
 
     public Product(String name) {
         this.name = name;
     }
 
-    public Product() {
-    }
-
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "PRODUCT_ID", unique = true)
+    @Column(
+            name = "PRODUCT_ID",
+            unique = true
+    )
     public int getId() {
-        return id;
+        return this.id;
+    }
+
+    @NotNull
+    @Column(
+            name = "NAME"
+    )
+    public String getName() {
+        return this.name;
+    }
+
+    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "product",
+            cascade = {CascadeType.ALL},
+            fetch = FetchType.LAZY
+    )
+    public List<Item> getItems() {
+        return this.items;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    @NotNull
-    @Column(name = "NAME")
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ITEM_ID")
-    public List<Item> getItems() {
-        return items;
     }
 
     public void setItems(List<Item> items) {

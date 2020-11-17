@@ -3,77 +3,70 @@ package com.kodilla.hibernate.invoice.dao;
 import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
-
-    @Autowired
-    private InvoiceDao invoiceDao;
-    @Autowired
-    private ItemDao itemDao;
     @Autowired
     private ProductDao productDao;
+    @Autowired
+    private InvoiceDao invoiceDao;
 
+    public InvoiceDaoTestSuite() {
+    }
 
     @Test
-    void testInvoiceDaoSave() {
+    public void testItemDaoSaveWithProduct() {
         //Given
-        Product product1 = new Product("chocolate");
-        Product product2 = new Product("chips");
-        Product product3 = new Product("cookies");
-
-
-        Item item1 = new Item(product1, new BigDecimal(10.3), 5);
-        Item item2 = new Item(product2, new BigDecimal(4.2), 12);
-        Item item3 = new Item(product3, new BigDecimal(7.77), 10);
-
-
-        Invoice invoice = new Invoice("14/2020");
-        invoice.getItems().add(item1);
-        invoice.getItems().add(item2);
-        invoice.getItems().add(item3);
-
+        Product petrolRegularUnleaded = new Product("Petrol Regular Unleaded");
+        Product dieselRegular = new Product("Diesel Regular");
+        Item item1 = new Item(petrolRegularUnleaded, new BigDecimal(1.23), 100);
+        Item item2 = new Item(dieselRegular, new BigDecimal(0.99), 20);
+        petrolRegularUnleaded.getItems().add(item1);
+        dieselRegular.getItems().add(item2);
+        item1.setProduct(petrolRegularUnleaded);
+        item2.setProduct(dieselRegular);
         //When
-        productDao.save(product1);
-        int product1Id = product1.getId();
-        productDao.save(product2);
-        int product2Id = product2.getId();
-        productDao.save(product3);
-        int product3Id = product3.getId();
-
-        itemDao.save(item1);
-        int item1Id = item1.getId();
-        itemDao.save(item2);
-        int item2Id = item2.getId();
-        itemDao.save(item3);
-        int item3Id = item3.getId();
-
-        invoiceDao.save(invoice);
-        int invoiceId = invoice.getId();
-
+        this.productDao.save(petrolRegularUnleaded);
+        this.productDao.save(dieselRegular);
+        int item1ID = item1.getId();
+        int item2ID = item2.getId();
         //Then
-        assertNotEquals(0, product1Id);
-        assertNotEquals(0, item1Id);
-        assertNotEquals(0, invoiceId);
-
-
+        Assert.assertNotEquals(0,item1ID);
+        Assert.assertNotEquals(0,item2ID);
         //CleanUp
-        try {
-//            productDao.deleteById(product1Id);
-//            productDao.deleteById(product2Id);
-//            productDao.deleteById(product3Id);
-//            itemDao.deleteById(item1Id);
-//            itemDao.deleteById(item2Id);
-//            itemDao.deleteById(item3Id);
-//            invoiceDao.deleteById(invoiceId);
-        } catch (Exception e) {
-            //do nothing
-        }
+        this.productDao.delete(petrolRegularUnleaded);
+        this.productDao.delete(dieselRegular);
+    }
+
+    @Test
+    public void testInvoiceDaoSave() {
+        //Given
+        Product petrolRegularUnleaded = new Product("Petrol Regular Unleaded");
+        Product dieselRegular = new Product("Diesel Regular");
+        Item item1 = new Item(petrolRegularUnleaded, new BigDecimal(1.23), 100);
+        Item item2 = new Item(dieselRegular, new BigDecimal(0.99), 20);
+        Invoice invoice1 = new Invoice("FV2017/01");
+        petrolRegularUnleaded.getItems().add(item1);
+        dieselRegular.getItems().add(item2);
+        invoice1.getItems().add(item1);
+        invoice1.getItems().add(item2);
+        //When
+        this.invoiceDao.save(invoice1);
+        int invoiceID = invoice1.getId();
+        String productName = (invoice1.getItems().get(0)).getProduct().getName();
+        //Then
+        Assert.assertNotEquals(0, invoiceID);
+        Assert.assertEquals("Petrol Regular Unleaded", productName);
+        //CleanUp
+        this.invoiceDao.delete(invoice1);
     }
 }
