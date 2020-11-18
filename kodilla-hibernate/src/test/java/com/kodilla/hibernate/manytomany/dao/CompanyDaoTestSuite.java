@@ -16,6 +16,8 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -90,10 +92,11 @@ class CompanyDaoTestSuite {
         int dataMastersId = dataMasters.getId();
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
-        //List<Employee> employeesList = EmployeeDao.employeeQuery("Clarckson");
+
+        List<Employee> employeesList = employeeDao.employeeQuery("Clarckson");
 
         //Then
-        //assertNotEquals(0, (long) employeesList.size());
+        assertNotEquals(0, (long) employeesList.size());
 
         //CleanUp
         //companyDao.deleteById(softwareMachineId);
