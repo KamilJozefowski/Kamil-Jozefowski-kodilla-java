@@ -22,7 +22,7 @@ public class Product {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @NotNull
     @Column(
             name = "PRODUCT_ID",

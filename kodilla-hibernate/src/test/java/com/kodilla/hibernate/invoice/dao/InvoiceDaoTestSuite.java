@@ -43,8 +43,8 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0,item1ID);
         Assert.assertNotEquals(0,item2ID);
         //CleanUp
-        this.productDao.delete(petrolRegularUnleaded);
-        this.productDao.delete(dieselRegular);
+        //this.productDao.delete(petrolRegularUnleaded);
+        //this.productDao.delete(dieselRegular);
     }
 
     @Test
@@ -67,6 +67,6 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0, invoiceID);
         Assert.assertEquals("Petrol Regular Unleaded", productName);
         //CleanUp
-        this.invoiceDao.delete(invoice1);
+        //this.invoiceDao.delete(invoice1);
     }
 }
