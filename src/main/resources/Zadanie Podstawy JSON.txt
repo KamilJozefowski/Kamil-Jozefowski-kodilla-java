@@ -1,27 +1,27 @@
 {
-  "car name": "Audi",
-  "car model": "A3 Limousine",
-  "car seat":{
-    "front left seat":{
+  "carName": "Audi",
+  "carModel": "A3 Limousine",
+  "carSeat":[
+    "frontLeftSeat":[
       "color": "black",
       "material": "skin"
-    },
-    "front right seat":{
+    ],
+    "frontRightSeat":[
       "color": "black",
       "material": "skin"
-    },
-    "back left seat":{
+    ],
+    "backLeftSeat":[
       "color": "black",
       "material": "skin"
-    },
-    "back middle seat":{
+    ],
+    "backMiddleSeat":[
       "color": "black",
       "material": "skin"
-    },
-    "back right seat":{
+    ],
+    "backRightSeat":[
       "color": "black",
       "material": "skin"
-    },
-  }
-  "engine capacity":2.0
+    ],
+  ]
+  "engineCapacity": 2.0
 }
