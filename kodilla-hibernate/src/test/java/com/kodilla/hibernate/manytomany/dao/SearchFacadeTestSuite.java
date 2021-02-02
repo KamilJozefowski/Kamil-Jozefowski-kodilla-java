@@ -40,7 +40,7 @@ public class SearchFacadeTestSuite {
         assertNotEquals(0, softwareMachinesId);
         assertEquals(1, companiesWithThreeFirsLetters.size());
         //CleanUp
-        companyDao.delete(softwareMachinesId);
+        companyDao.deleteById(softwareMachinesId);
     }
 
     @Test
@@ -58,6 +58,6 @@ public class SearchFacadeTestSuite {
         assertNotEquals(0, johnSmithId);
         assertEquals(1, employeesWithSpecificLastName.size());
         //CleanUp
-        employeeDao.delete(johnSmithId);
+        employeeDao.deleteById(johnSmithId);
     }
 }
