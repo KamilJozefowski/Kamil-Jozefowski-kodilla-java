@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.kodilla'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '15'
+sourceCompatibility = '14'
 
 repositories {
     mavenCentral()
@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
@@ -23,3 +24,6 @@ test {
     useJUnitPlatform()
 }
 
+bootJar {
+    enabled = false
+}
